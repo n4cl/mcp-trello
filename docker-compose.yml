@@ -1,6 +1,8 @@
 services:
   mcp-trello-server:
     build: .
+    env_file:
+      - ./.env
     ports:
       - "8000:8000" # FastMCPサーバーが使用するポートに合わせて調整が必要かもしれません
     volumes:
