@@ -1,0 +1,21 @@
+name: Docker Build Check
+
+on:
+  pull_request: # PRイベントをトリガーとする
+    branches:
+      - main # mainブランチへのPR
+      - develop # developブランチへのPR
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Dockerが利用可能な環境（Ubuntu最新版）で実行
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4 # リポジトリのコードをチェックアウト
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3 # Docker Buildx（新しいビルドツール）をセットアップ
+
+    - name: Build and run Docker containers
+      run: docker compose up --build
