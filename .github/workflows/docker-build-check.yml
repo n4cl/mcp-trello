@@ -20,8 +20,8 @@ jobs:
     - name: Rename .env.template to .env
       run: mv .env.template .env
 
-    - name: Build and run Docker containers in detached mode
-      run: docker compose up --build -d
+    - name: Build and run Docker containers in detached mode (production-like)
+      run: docker compose -f docker-compose.yml up --build -d
 
     - name: Ensure containers are stopped and removed
       if: always()

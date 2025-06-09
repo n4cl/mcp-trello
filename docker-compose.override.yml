@@ -1,0 +1,5 @@
+services:
+  mcp-trello-server:
+    volumes:
+      - .:/app # 現在のディレクトリをコンテナの /app にマウント
+    command: tail -f /dev/null
