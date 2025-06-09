@@ -26,4 +26,3 @@ jobs:
     - name: Ensure containers are stopped and removed
       if: always()
       run: docker compose down
-
