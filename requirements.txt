@@ -1,2 +1,4 @@
-python-dotenv
-fastmcp
+python-dotenv==1.1.0
+fastmcp==2.7.1
+py-trello==0.20.1
+pytest==8.4.0
